@@ -19,6 +19,8 @@ jobs:
         run: |
           cd ryza
           sed -i 's#"@capacitor-community/text-to-speech":"\^6.0.0"#"@capacitor-community/text-to-speech":"6.0.0"#' package.json
+          npm install
+          sed -i 's/VERSION_21/VERSION_17/g' node_modules/@capacitor-community/text-to-speech/android/build.gradle
           bash setup.sh
       - uses: actions/upload-artifact@v4
         with:
